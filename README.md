@@ -25,6 +25,6 @@ A comprehensive simulation report is generated that outlines the test cases and 
 
 *OUTPUT* :
 
-<img width="763" alt="Image" src="https://github.com/user-attachments/assets/4f78e242-9710-46f2-91b6-d55ba42d22d3" />
+<img width="778" alt="Image" src="https://github.com/user-attachments/assets/46a1eec5-062d-4154-8b4e-044a02a58a74" />
 
-<img width="785" alt="Image" src="https://github.com/user-attachments/assets/ec4de111-d7f1-4dff-8636-147e1d9bde17" />
+<img width="761" alt="Image" src="https://github.com/user-attachments/assets/ddafa11b-981b-4188-a66b-07d6b6af8742" />
