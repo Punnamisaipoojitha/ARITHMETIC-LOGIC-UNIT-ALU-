@@ -14,17 +14,19 @@
 
 *DESCRIPTION OF THE TASK* :
 
-This project involves the design and simulation of a basic 4-bit Arithmetic Logic Unit (ALU) using Verilog Hardware Description Language (HDL). The ALU is a key component of any digital processing system and is responsible for carrying out both arithmetic and logical operations. As part of the internship at CodTech, the objective is to implement a simple yet functional ALU capable of performing five primary operations: addition, subtraction, bitwise AND, bitwise OR, and bitwise NOT.
+This VHDL code defines a 4-bit Arithmetic Logic Unit (ALU) named `ALU4bit`. An ALU is a core component in digital processors, responsible for carrying out arithmetic and logical operations. In this design, two 4-bit input vectors `A` and `B`, along with a 3-bit selection signal `sel`, determine the operation to be performed. The result of the operation is provided as a 4-bit output through the signal `result`.
 
-The ALU takes two 4-bit inputs, labeled A and B, and a 3-bit control input called opcode that determines which operation to perform. Depending on the opcode value, the ALU computes and outputs the result of the selected operation. Specifically, when the opcode is 000, the ALU performs addition (A + B); when it is 001, it performs subtraction (A - B); when set to 010, it computes the bitwise AND of A and B; opcode 011 results in a bitwise OR; and finally, opcode 100 applies a bitwise NOT to operand A, ignoring B.
+The entity declaration defines the input and output ports of the ALU. Inputs `A` and `B` represent the operands for the ALU, while `sel` determines which operation to perform. The output `result` carries the outcome of the selected operation. Since the width of all data lines is 4 bits, this ALU can handle small binary numbers ranging from 0 to 15 in unsigned format.
 
-The implementation is carried out using Verilog. The design includes two primary files: the ALU module (ALU.v) and its corresponding testbench (ALU_tb.v). The testbench simulates various inputs and opcodes to verify the correctness of each operation. Simulated results are observed using waveform analysis or console outputs. For instance, the addition of A = 0011 and B = 0001 with opcode 000 produces the result 0100.
+The architecture section describes the behavior of the ALU using a `process` block, which is sensitive to changes in `A`, `B`, or `sel`. Inside the process, a `case` statement evaluates the value of `sel` to determine which operation to perform. For instance, if `sel` is "000", the ALU performs binary addition (`A + B`). If `sel` is "001", it performs subtraction (`A - B`). Logic operations such as AND, OR, and NOT are carried out for selections "010", "011", and "100" respectively. For the NOT operation, only input `A` is considered.
 
-A comprehensive simulation report is generated that outlines the test cases and confirms that the ALU performs as expected. The final deliverables include the ALU source code, testbench file, simulation output, and a report describing the implementation process. This project serves as a foundational exercise in digital design, showcasing the student’s ability to use Verilog to create and simulate combinational logic modules.
+One important point to note is the use of `STD_LOGIC_ARITH` and `STD_LOGIC_UNSIGNED`, which are non-standard libraries specific to some VHDL tools and not part of the official IEEE standard. These libraries allow arithmetic operations on `STD_LOGIC_VECTOR`, but for better portability and standards compliance, `numeric_std` should be used with explicitly declared `UNSIGNED` or `SIGNED` types. Nonetheless, the design provides a basic and functional ALU that is useful for understanding how selection-based combinational logic can be used to implement different operations in digital systems.
 
 
 *OUTPUT* :
 
+
 <img width="778" alt="Image" src="https://github.com/user-attachments/assets/46a1eec5-062d-4154-8b4e-044a02a58a74" />
+
 
 <img width="761" alt="Image" src="https://github.com/user-attachments/assets/ddafa11b-981b-4188-a66b-07d6b6af8742" />
